@@ -1,13 +1,13 @@
 import Modal from "@/components/Modal";
 import PriceInfoCard from "@/components/PriceInfoCard";
 import ProductCard from "@/components/ProductCard";
-import { getProductById, getSimilarProducts } from "@/lib/actions"
+import { getProductById, getSimilarProducts } from "@/lib/actions";
 import { formatNumber } from "@/lib/utils";
 import { Product } from "@/types";
+import { arrow_down, arrow_up, bag, bookmark, chart, comment, price_tag, red_heart, share, star } from "@assets/icons";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { arrow_down, arrow_up, bag, bookmark, chart, comment, price_tag, red_heart, share, star } from "@assets/icons"
 
 type Props = {
   params: { id: string }
@@ -142,7 +142,7 @@ const ProductDetails = async ({ params: { id } }: Props) => {
               <PriceInfoCard
                 title="Highest Price"
                 iconSrc={arrow_up}
-                value={`${product.currency} ${formatNumber(product.highestPrice)}`}
+                value={`${product.currency} ${formatNumber(product.highestPrice > product.originalPrice ? product.originalPrice : product.highestPrice)}`}
               />
               <PriceInfoCard
                 title="Lowest Price"
