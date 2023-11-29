@@ -20,7 +20,8 @@
     "react-dom": "latest",
     "react-responsive-carousel": "^3.2.23",
     "sharp": "^0.33.0",
-    "supports-color": "^8.1.1"
+    "supports-color": "^8.1.1",
+    "swc": "^1.0.11"
   },
   "devDependencies": {
     "@types/node": "latest",
